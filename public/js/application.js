@@ -21,19 +21,21 @@ var hasWon = function(){
    // $('#winner').html("Player 1 is the winner!");
    alert("Player 1 won!");
   	var winner = player1_id;
-  	submitForm(winner);
+  	var loser = player2_id;
+  	submitForm(winner, loser);
   } 
   else if (player2 === 20){
   //	var winningPlayerId = $("#player2 th").data('player-id');
   //  $('#winner').html("Player 2 is the winner!");
   alert("Player 2 won!");
   var winner = player2_id;
-  submitForm(winner);
+  var loser = player1_id;
+  submitForm(winner, loser);
   }
 
 };
 
-$(document).keydown(function(keyCode){
+$(document).keyup(function(keyCode){
   if (keyCode.which === 81){
   	player1Move();
   } 
@@ -45,9 +47,10 @@ $(document).keydown(function(keyCode){
 
 });
 
-function submitForm(winner){
+function submitForm(winner, loser){
 forms = document.getElementById("result");
 forms.winner_id.value = winner;
+forms.loser_id.value = loser;
 forms.submit();
 }
 

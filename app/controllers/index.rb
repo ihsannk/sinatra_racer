@@ -34,13 +34,14 @@ post '/result/:id' do
  @game = Game.find(params[:id])
  
  @duration = Time.now - session[:time]
- @game.update(winner_id: params[:winner_id], duration: @duration )
+ @game.update(winner_id: params[:winner_id], loser_id: params[:loser_id], duration: @duration )
  redirect to "/result/#{@game.id}" 
 end
 
 get "/result/:id" do
   @game = Game.find(params[:id])
   @winner = Player.find(@game.winner_id)
+  @loser = Player.find(@game.loser_id)
   erb :results
 end
 
