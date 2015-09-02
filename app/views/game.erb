@@ -1,0 +1,68 @@
+<center><div class="container">
+ <html>
+  
+  <table class="racer_table">
+    <tr id="player1_strip">
+      <td><%= @player1.name%></td>
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="end"></td>
+      
+    </tr>
+    <tr id="player2_strip">
+      <td><%= @player2.name%></td>
+      <td class="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="end"></td>
+            
+    </tr>
+  </table>
+  
+  <button id="restart">Restart</button>
+
+  <form id="result" action="/result/<%= @game_id %>" method="post" style="visibility:hidden">
+    <input type="text" name="winner_id">
+    <input type="submit">
+  </form>
+
+  <script>
+    var player1_id = <%= @player1.id %>;
+    var player2_id = <%= @player2.id %>;
+  </script>
+
+ </html>
+</div></center>
